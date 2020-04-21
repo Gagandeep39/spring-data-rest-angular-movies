@@ -1,1 +1,29 @@
-<p>home works!</p>
+
+<table class="table table-hover table-bordered center">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Rating</th>
+      <th>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" >
+            Select Genre
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a *ngFor="let genre of genres | keyvalue" class="dropdown-item" (click)="fetchByGenre(genre.value)" >{{genre.value}}</a>
+            <a class="dropdown-item" (click)="fetchAllMovies()">All</a>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of movies">
+      <td> {{movie.moviesId}} </td>
+      <td> {{movie.moviesName}} </td>
+      <td> <section><bar-rating [rate]="movie.moviesRating" [max]="5" [readOnly]="true"></bar-rating></section> </td>
+      <td> {{movie.moviesGenre}} </td>
+    </tr>
+  </tbody>
+</table>
