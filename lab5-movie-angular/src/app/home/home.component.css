@@ -1,3 +1,10 @@
+/**
+ * @author Gagandeep Singh
+ * @email singh.gagandeep3911@gmail.com
+ * @create date 2020-04-21 23:45:48
+ * @modify date 2020-04-21 23:45:48
+ * @desc [description]
+ */
 .table{
   text-align: center;
   align-content: center;
@@ -5,4 +12,7 @@
 .dropdown
 {
   cursor: pointer;
+}
+.dropdown-toggle{
+  background-color: #6a1b9a;
 }
