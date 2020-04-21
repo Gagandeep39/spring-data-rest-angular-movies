@@ -13,7 +13,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/**
+ * Movie Bean
+ */
 @Entity
 @Table(name = "movie_table")
 public class Movie {

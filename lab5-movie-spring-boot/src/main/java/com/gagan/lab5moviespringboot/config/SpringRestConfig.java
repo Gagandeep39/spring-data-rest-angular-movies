@@ -17,6 +17,7 @@ import org.springframework.stereotype.Component;
 public class SpringRestConfig {
 
     /**
+     * Default behaviour: ID is not sent in repsosne
      * To enable IDs to be sent in response from server
      */
     @Bean
