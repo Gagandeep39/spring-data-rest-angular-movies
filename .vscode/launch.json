@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<lab5-movie-spring-boot>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.gagan.lab5moviespringboot.DemoApplication",
+            "projectName": "lab5-movie-spring-boot",
+            "args": ""
+        }
+    ]
+}
