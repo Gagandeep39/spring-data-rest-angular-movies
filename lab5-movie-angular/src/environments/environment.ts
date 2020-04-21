@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   url: "http://localhost:8001/movies",
   fetchById: '/',
-  fetchByGenre: "/findByMoviesGenre?genre="
+  fetchByGenre: "/search/findByMoviesGenre?genre="
 };
 
 /*
