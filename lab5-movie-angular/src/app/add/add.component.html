@@ -1,1 +1,67 @@
-<p>add works!</p>
+<!--
+@author Gagandeep Singh
+@email singh.gagandeep3911@gmail.com
+@create date 2020-04-21 23:15:53
+@modify date 2020-04-21 23:15:53
+@desc [description]
+-->
+
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+  <!-- ID field -->
+  <input
+  type="hidden"
+  name="moviesId"
+  ngModel>
+
+  <!-- Movie Title -->
+  <div class="col">
+    <div class="form-group">
+      <label for="name">Title</label>
+        <input
+        name="moviesName"
+        placeholder="Title"
+        ngModel
+        required
+        minlength="2"
+        type="text"
+        id="name"
+        [ngClass]="{'is-invalid': form.submitted && movieName.invalid}"
+        #movieName="ngModel"
+        class="form-control">
+        <div class="invalid-feedback" *ngIf="form.submitted && movieName.invalid">* Required</div>
+    </div>
+  </div>
+
+  <!-- Movie Rating -->
+  <div class="col">
+    <div class="form-group">
+        <label for="rating">Movie Rating</label>
+        <bar-rating name="rating" [max]="5" [theme]="'stars'" required id="rating" ngModel name="moviesRating" #rating="ngModel"></bar-rating>
+    </div>
+    <div class="error" *ngIf="form.submitted && rating.invalid">* Required</div>
+  </div>
+
+  <!-- Movie Genre -->
+  <div class="col">
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <select
+      name="moviesGenre"
+      id="genre"
+      ngModel
+      required
+      #genre="ngModel"
+      [ngClass]="{'is-invalid': form.submitted && genre.invalid}"
+      class="custom-select">
+          <option *ngFor="let g of genres | keyvalue" [value]="g.key"> {{g.value}} </option>
+      </select>
+      <div class="invalid-feedback" *ngIf="form.submitted && genre.invalid">Select a Genre</div>
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <div class="col">
+    <input type="submit" value="Submit" class="btn btn-primary">
+  </div>
+</form>
